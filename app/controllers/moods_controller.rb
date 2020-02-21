@@ -53,7 +53,7 @@ class MoodsController < ApplicationController
                                  :calm,
                                  :sad,
                                  :nervous,
-                                 :energetic,
+                                 :motivated,
                                  :angry)
   end
 end

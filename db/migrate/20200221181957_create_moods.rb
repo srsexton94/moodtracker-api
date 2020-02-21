@@ -5,7 +5,7 @@ class CreateMoods < ActiveRecord::Migration[5.2]
       t.boolean :calm
       t.boolean :sad
       t.boolean :nervous
-      t.boolean :energetic
+      t.boolean :motivated
       t.boolean :angry
 
       t.timestamps

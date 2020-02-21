@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_181957) do
     t.boolean "calm"
     t.boolean "sad"
     t.boolean "nervous"
-    t.boolean "energetic"
+    t.boolean "motivated"
     t.boolean "angry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
