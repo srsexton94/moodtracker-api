@@ -3,27 +3,41 @@
 require 'rails_helper'
 
 RSpec.describe 'routes for entries' do
-  skip 'routes to #index' do
-    expect(get: '/entries').to route_to('entries#index')
+  skip 'routes GET /entries to the entries#index action' do
+    # check that a GET request to /entries routes to the index method
+    # of the entries controller
+    expect(get('/entries')).to route_to('entries#index')
   end
 
-  skip 'routes to #show' do
-    expect(get: '/entries/1').to route_to('entries#show', id: '1')
+  skip 'routes GET /entries/:id to the entries#show action' do
+    # check that a GET request to /entries routes to the show method
+    # of the entries controller, given correct parameters
+    expect(get('/entries/1')).to route_to(
+      controller: 'entries',
+      action: 'show',
+      id: '1'
+    )
   end
 
-  skip 'routes to #create' do
-    expect(post: '/entries').to route_to('entries#create')
+  skip 'routes DELETE /entries/:id to the entries#destroy action' do
+    # check that a DELETE request to /entries routes to the destroy method
+    # of the entries controller, given correct parameters
+    expect(delete('/entries/1')).to route_to(
+      controller: 'entries',
+      action: 'destroy',
+      id: '1'
+    )
   end
 
-  skip 'routes to #update via PUT' do
-    expect(put: '/entries/1').to route_to('entries#update', id: '1')
+  skip 'routes PATCH /entries/:id to the entries#update action' do
+    expect(patch('/entries/1')).to route_to(
+      controller: 'entries',
+      action: 'update',
+      id: '1'
+    )
   end
 
-  skip 'routes to #update via PATCH' do
-    expect(patch: '/entries/1').to route_to('entries#update', id: '1')
-  end
-
-  skip 'routes to #destroy' do
-    expect(delete: '/entries/1').to route_to('entries#destroy', id: '1')
+  skip 'routes POST /entries to the entries#create action' do
+    expect(post('/entries')).to route_to('entries#create')
   end
 end
