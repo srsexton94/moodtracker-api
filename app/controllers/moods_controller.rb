@@ -17,8 +17,8 @@ class MoodsController < ProtectedController
 
   # POST /moods
   def create
-    @mood = Mood.new(mood_params)
-
+    @mood = current_user.moods.build(mood_params)
+    # @example = current_user.examples.build(example_params)
     if @mood.save
       render json: @mood, status: :created, location: @mood
     else
@@ -44,7 +44,8 @@ class MoodsController < ProtectedController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_mood
-    @mood = Mood.find(params[:id])
+    @mood = current_user.moods.find(params[:id])
+    # @example = current_user.examples.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
