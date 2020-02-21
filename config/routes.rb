@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   # RESTful routes
+  resources :moods, except: %i[new edit]
   resources :examples, except: %i[new edit]
 
   # Custom routes
