@@ -7,12 +7,7 @@ curl "http://localhost:4741/moods" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "mood": {
-      "happy": "'"${HAPPY}"'",
-      "calm": "'"${CALM}"'",
-      "sad": "'"${SAD}"'",
-      "nervous": "'"${NERVOUS}"'",
-      "motivated": "'"${MOTIVATED}"'",
-      "angry": "'"${ANGRY}"'"
+      "mood": "'"${MOOD}"'"
     }
   }'
 
