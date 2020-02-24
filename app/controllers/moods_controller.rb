@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MoodsController < ProtectedController
+class MoodsController < OpenReadController
   before_action :set_mood, only: %i[show update destroy]
 
   # GET /moods
