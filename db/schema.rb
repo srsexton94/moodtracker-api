@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_003706) do
+ActiveRecord::Schema.define(version: 2020_02_24_153556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_003706) do
   end
 
   create_table "moods", force: :cascade do |t|
-    t.boolean "happy"
-    t.boolean "calm"
-    t.boolean "sad"
-    t.boolean "nervous"
-    t.boolean "motivated"
-    t.boolean "angry"
+    t.string "mood", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
