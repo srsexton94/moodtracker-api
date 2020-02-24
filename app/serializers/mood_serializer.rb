@@ -1,3 +1,3 @@
 class MoodSerializer < ActiveModel::Serializer
-  attributes :id, :mood, :user
+  attributes :id, :mood, :created_at, :user
 end
