@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MoodsController < ProtectedController
+class MoodsController < ApplicationController
   before_action :set_mood, only: %i[show update destroy]
 
   # GET /moods
@@ -17,8 +17,8 @@ class MoodsController < ProtectedController
 
   # POST /moods
   def create
-    @mood = current_user.moods.build(mood_params)
-    # @example = current_user.examples.build(example_params)
+    @mood = Mood.new(mood_params)
+
     if @mood.save
       render json: @mood, status: :created, location: @mood
     else
@@ -44,8 +44,7 @@ class MoodsController < ProtectedController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_mood
-    @mood = current_user.moods.find(params[:id])
-    # @example = current_user.examples.find(params[:id])
+    @mood = Mood.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
