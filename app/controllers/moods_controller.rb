@@ -5,7 +5,7 @@ class MoodsController < ProtectedController
 
   # GET /moods
   def index
-    @moods = Mood.all
+    @moods = current_user.moods.all
 
     render json: @moods
   end
