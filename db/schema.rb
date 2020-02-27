@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_203650) do
+ActiveRecord::Schema.define(version: 2020_02_27_225925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 2020_02_24_203650) do
     t.index ["user_id"], name: "index_moods_on_user_id"
   end
 
+  create_table "needs", force: :cascade do |t|
+    t.integer "hunger"
+    t.integer "comfort"
+    t.integer "bladder"
+    t.integer "energy"
+    t.integer "fun"
+    t.integer "social"
+    t.integer "hygiene"
+    t.integer "environment"
+    t.bigint "mood_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_needs_on_mood_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -43,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_02_24_203650) do
 
   add_foreign_key "examples", "users"
   add_foreign_key "moods", "users"
+  add_foreign_key "needs", "moods"
 end
