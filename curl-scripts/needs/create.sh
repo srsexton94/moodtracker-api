@@ -14,7 +14,8 @@ curl "http://localhost:4741/needs" \
       "fun": "'"${FUN}"'",
       "social": "'"${SOCIAL}"'",
       "hygiene": "'"${HYGIENE}"'",
-      "environment": "'"${ENVIRONMENT}"'"
+      "environment": "'"${ENVIRONMENT}"'",
+      "mood_id": "'"${MOOD}"'"
     }
   }'
 
