@@ -11,4 +11,4 @@ curl "http://localhost:4741/moods/${ID}" \
     }
   }'
 
-  echo
+echo
