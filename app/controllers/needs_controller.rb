@@ -1,9 +1,11 @@
-class NeedsController < ApplicationController
-  before_action :set_need, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class NeedsController < ProtectedController
+  before_action :set_need, only: %i[show update destroy]
 
   # GET /needs
   def index
-    @needs = Need.all
+    @needs = current_user.needs.all
 
     render json: @needs
   end
@@ -15,7 +17,7 @@ class NeedsController < ApplicationController
 
   # POST /needs
   def create
-    @need = Need.new(need_params)
+    @need = current_user.needs.build(need_params)
 
     if @need.save
       render json: @need, status: :created, location: @need
@@ -39,13 +41,22 @@ class NeedsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_need
-      @need = Need.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def need_params
-      params.require(:need).permit(:hunger, :comfort, :bladder, :energy, :fun, :social, :hygiene, :environment, :mood_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_need
+    @need = current_user.needs.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def need_params
+    params.require(:need).permit(:hunger,
+                                 :comfort,
+                                 :bladder,
+                                 :energy,
+                                 :fun,
+                                 :social,
+                                 :hygiene,
+                                 :environment,
+                                 :mood_id)
+  end
 end
