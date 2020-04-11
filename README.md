@@ -1,16 +1,17 @@
 
 # MoodTracker
 
-##### Front End:
-- [GitHub](https://github.com/srsexton94/moodtracker-client)
-- [Client URL](https://srsexton94.github.io/moodtracker-client/)
+![](./screenshot.png)
 
-##### Back End:
-- [Server URL](https://moodtracker-api.herokuapp.com/)
+## Project Description
+A full-stack application (SPA) with a custom, RESTful API.  A tracker application that allows users to sign up for an account and then record how they are feeling alongside a self-rating on how well they are meeting their basic needs.  This information is then used in a number of data visualizations to help theuser notice patterns and trends in their mental ehalth and general well-being.  This is done in aim of aiding users' agency in facilitating their own self care and other mental health considerations as well.
 
-## Objective
-Independently create a full-stack application (SPA) with a custom, RESTful API.
-The application must meet certain specifications..
+### Project Links
+- [Front End Repo](https://github.com/srsexton94/moodtracker-client)
+- [Deployed Client URL](https://srsexton94.github.io/moodtracker-client/)
+- [Deployed Server URL](https://moodtracker-api.herokuapp.com/)
+- [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
+
 
 ## Specifications
 * Be a SPA with User Authentication that interacts with a custom API
